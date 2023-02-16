@@ -6,17 +6,20 @@ import { SignIn } from 'src/app/i-model/i-signIn';
 import { SignUpModel } from 'src/app/i-model/i-signUp';
 import { Auth, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithPopup } from '@angular/fire/auth';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private currentStatus: boolean = false;
-  public statusEmiter :BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.currentStatus)
-
-  userLogged: boolean = false;
+  userId : string = "";
 
   private apiServeUrl = environment.apiBaseUrl;
+
+  private statusControl : boolean = false;
+  public statusEmiter : BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.statusControl)
+
+  userIsLogged: boolean = false;
 
 
   constructor(private http: HttpClient,
@@ -33,8 +36,8 @@ export class LoginService {
  
   activeLogin(){
     localStorage.setItem('MyToken', 'true')
-    this.currentStatus = !this.currentStatus;
-    this.statusEmiter.next(this.currentStatus);
+    this.statusControl = !this.statusControl;
+    this.statusEmiter.next(this.statusControl);
   }
  
   logOut(){
@@ -48,22 +51,27 @@ export class LoginService {
   //********************METODOS HTTP***********************
 
   login(credentials: SignIn): Observable<string> {
-    return this.http.post(this.apiServeUrl+"/security/singIn", credentials,{responseType: 'text'});
+    return this.http.post(this.apiServeUrl+"/security/singIn", credentials, {responseType: 'text'});
   }
   
+
   signUp(dataRegister: SignUpModel): Observable<string>{ 
-    return this.http.post(this.apiServeUrl+"/security/singUp", dataRegister, { responseType: 'text'});
+    return this.http.post(this.apiServeUrl+"/security/singUp", dataRegister, {responseType: 'text'});
   }
 
   //***********************GOOGLE**************************
   
-  registerGoogle({email, password} : any) {
-    return createUserWithEmailAndPassword(this.auth, email, password) //LE PASO EL SERVICIO DE AUTENTICACION + MAIL + PASSWORD
-  }
-
-  loginGoogle(){
+  registerGoogle(){
     return signInWithPopup(this.auth, new GoogleAuthProvider());
   }
+
+  /*
+  loginGoogle({email, password} : any) {
+    return createUserWithEmailAndPassword(this.auth, email, password) //LE PASO EL SERVICIO DE AUTENTICACION + MAIL + PASSWORD
+  }
+  */
+
+  
 
 }
 

@@ -16,7 +16,12 @@ export class GlobalService {
   public valorCaseUser : number = 0;
   public switchViewUser : boolean = true;
   public switchUserUpdate : boolean = false;
-  
+  public google: boolean = false;
+
+  withGoogle(){
+    this.valorCaseUser = 2;
+    this.google = false;
+  }
 
   eligeViewUser(){
 

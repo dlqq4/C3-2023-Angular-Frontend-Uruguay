@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AccountService } from '../services/account.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { AccountModel } from 'src/app/i-model/i-account';
+import { LoginService } from 'src/app/login/services/login.service';
 
 
 @Component({
@@ -15,14 +16,15 @@ export class MyAccountsComponent {
 
   public accounts : AccountModel[] = [];
 
-  public idUser : string = "09007808-a040-4e28-9eb6-5977350d26d4";
+  
   public cuenta : Object = {};
 
   account : AccountModel = <AccountModel> this.cuenta;
 
   
   
-  constructor(public accountService: AccountService) {
+  constructor(public accountService: AccountService,
+              public loginService: LoginService) {
 
   }
 
@@ -33,7 +35,7 @@ export class MyAccountsComponent {
 
 
   public getAllAccountByIdUser(): void {
-    this.accountService.getAccountById(this.idUser).subscribe({
+    this.accountService.getAccountById(this.loginService.userId).subscribe({
     next: (response: AccountModel[] ) =>{console.log(this.accounts = response)},
     error: (error:HttpErrorResponse)=> {alert(error.message)},
     complete: ()=> {console.log(this.accounts)}
