@@ -16,11 +16,6 @@ export class UserProfileComponent implements OnInit{
 
 
   public customers : CustomerModel[] = [];
-  
-  public user : Object = {};
-  customer : CustomerModel = <CustomerModel> this.user;
-
-  //public id : string = "c3898375-5a55-45f3-a0be-ffca932208e6";
 
 
   constructor  (public globalService: GlobalService,
@@ -29,8 +24,7 @@ export class UserProfileComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.getAllCustomer()
-    this.getCustomer()
+    this.customerService.getCustomer()
     if (this.globalService.google) this.globalService.withGoogle()
   }
 
@@ -46,16 +40,5 @@ export class UserProfileComponent implements OnInit{
     error: (error:HttpErrorResponse)=> {alert(error.message)}
     })
   }
-
-
-  
-  //TRAE UN CUSTOMER SEGUN ID
-  public getCustomer(): void {
-    this.customerService.getcustomerById(this.loginService.userId).subscribe({
-    next: (response: CustomerModel ) =>{console.log(this.customer = response)},
-    error: (error:HttpErrorResponse)=> {alert(error.message)}
-    })
-  }
  
-
 }

@@ -5,6 +5,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { CustomerAccountRoutingModule } from './customer-account-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,7 +19,10 @@ import { CustomerAccountRoutingModule } from './customer-account-routing.module'
   ],
   imports: [
     CommonModule, //SIRVE PARA DIRECTIVAS DE ngIf ngFor y Pipes
-    CustomerAccountRoutingModule //RUTAS PERESOSAS 
+    CustomerAccountRoutingModule, //RUTAS PERESOSAS
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule, 
   ]
 })
 export class CustomerAccountModule { }

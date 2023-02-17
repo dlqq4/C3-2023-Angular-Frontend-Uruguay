@@ -25,7 +25,6 @@ export class SingupComponent {
   
   constructor(public globalService : GlobalService,
               private formBuilder : FormBuilder,
-              private formBuilderGoogle : FormBuilder,
               public loginService : LoginService,
               public routes : Router) {}
 
@@ -73,19 +72,7 @@ export class SingupComponent {
     }
   }
 
-
-/*   pickGoogle(){
-    this.loginService.registerGoogle()
-    .then(response =>{console.log(response)
-      if(response.user.email) this.customerGoogle.email = response.user.email
-      if(response.user.displayName) this.customerGoogle.fullName = response.user.displayName
-      this.routes.navigate(['/customer-account/app-user-profile']);
-    }) 
-    .catch(error => console.log(error));
-
-  } */
-
-  //*********************************SIGN UP GOOGLE*************************************
+  //*********************************SIGNUP GOOGLE*************************************
   
   
   withGoogle(){
@@ -117,28 +104,6 @@ export class SingupComponent {
     .catch(error => console.log(error))
   }
 
-  
-  //***********************************FORM GOOGLE**************************************
-
-  
-/*   signUpFormGoogle = this.formBuilderGoogle.group({
-
-    fullName: this.customerGoogle.fullName,
-    email: this.customerGoogle.email,
-    accountTypeName: this.customerGoogle,
-  
-  });
-
-
-  postSignUpGoogle() {
-    if (this.signUpFormGoogle) {
-
-      this.loginService.signUp(this.customerGoogle).subscribe(data =>{console.log(data);
-      localStorage.setItem('Token', data);
-      this.loginService.activeLogin();
-      this.routes.navigate(['/customer-account/app-update-user'])});    
-    }
-  } */
   
 
 }

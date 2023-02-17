@@ -8,8 +8,6 @@
     <app-update-user></app-update-user>
  
 
-
-
     <!--************************* CUSTOMER VIEW *************************-->
     <div class="container" *ngIf="(globalService.switchViewUser)">
       <section class="section about-section gray-bg" id="about" >
@@ -25,28 +23,28 @@
 
                   <div class="media">
                     <label>Nombre</label>
-                    <p>{{customer.fullName}}</p>
+                    <p>{{this.customerService.customer.fullName}}</p>
                   </div>
 
                   <div class="media">
                     <label>N° Documento</label>
-                    <p>{{customer.document}}</p>
+                    <p>{{this.customerService.customer.document}}</p>
                   </div>
 
                   <div class="media">
                     <label>Tipo de Documento</label>
-                    <p>{{customer.documentType.name}}</p>
+                    <p>{{this.customerService.customer.documentType.name}}</p>
                   </div>
 
                 </div>
                 <div class="col-md-6">
                   <div class="media">
                     <label>E-mail</label>
-                    <p>{{customer.email}}</p>
+                    <p>{{this.customerService.customer.email}}</p>
                   </div>
                   <div class="media">
                     <label>Phone</label>
-                    <p>{{customer.phone}}</p>
+                    <p>{{this.customerService.customer.phone}}</p>
                   </div>
 
                 </div>

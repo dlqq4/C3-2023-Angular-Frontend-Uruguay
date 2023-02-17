@@ -30,76 +30,63 @@
             <h6 class="cabeza">Datos Personales</h6>
           </div>
           
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-            <div class="form-group">
-              <label for="fullName">Nombre Completo</label>
-              <input type="text" class="form-control" id="fullName" placeholder="Enter full name">
+          <form [formGroup]="UpdateForm" (ngSubmit)="postUpdate()">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="form-group">
+                <label for="fullName">Nombre Completo</label>
+                <input type="text" class="form-control" name="fullName" placeholder="Enter full name" formControlName="fullName">
+              </div>
+            </div>
+    
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <input type="text" class="form-control" id="phone" placeholder="Enter phone number" formControlName="phone">
+              </div>
+            </div>
+    
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="form-group">
+                <label for="website">Número de Documento</label>
+                <input type="url" class="form-control" id="website" placeholder="Website url" formControlName="document">
+              </div>
+            </div>
+    
+    
+          <div class="row gutters">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <h6 class="cabeza">Credenciales de Acceso</h6>
+            </div>
+    
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="form-group">
+                <label for="Street">Email</label>
+                <input type="name" class="form-control" id="Street" placeholder="Enter Street" formControlName="email">
+              </div>
+            </div>
+            
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="form-group">
+                <label for="sTate">Contraseña</label>
+                <input type="text" class="form-control" id="password" placeholder="Enter State" formControlName="password">
+              </div>
+            </div>
+    
+            
+           
+          </div>
+          <div class="row gutters">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <div class="text-right">
+    
+                <button class="boton"  (click)="(globalService.valorCaseUser = 1)" >Cancelar</button>
+                <button class="boton" type="submit" >Actualizar</button>
+               
+              </div>
             </div>
           </div>
-  
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-            <div class="form-group">
-              <label for="eMail">Tipo de Documento</label>
-              <input type="email" class="form-control" id="eMail" placeholder="Enter email ID">
-            </div>
-          </div>
-  
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-            <div class="form-group">
-              <label for="phone">Teléfono</label>
-              <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
-            </div>
-          </div>
-  
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-            <div class="form-group">
-              <label for="website">Número de Documento</label>
-              <input type="url" class="form-control" id="website" placeholder="Website url">
-            </div>
-          </div>
-  
-  
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-            <div class="form-group">
-              <label for="sTate">Avatar</label>
-              <input type="text" class="form-control" id="sTate" placeholder="Url imagen">
-            </div>
-          </div>
+        </form>
         </div>
-  
-        <div class="row gutters">
-          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <h6 class="cabeza">Credenciales de Acceso</h6>
-          </div>
-  
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-            <div class="form-group">
-              <label for="Street">Email</label>
-              <input type="name" class="form-control" id="Street" placeholder="Enter Street">
-            </div>
-          </div>
-          
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-            <div class="form-group">
-              <label for="sTate">Contraseña</label>
-              <input type="text" class="form-control" id="sTate" placeholder="Enter State">
-            </div>
-          </div>
-  
-          
-         
-        </div>
-        <div class="row gutters">
-          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <div class="text-right">
-  
-              <button class="boton"  (click)="(globalService.valorCaseUser = 1)" >Cancelar</button>
-              <button class="boton"  (click)="true" >Actualizar</button>
-             
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     </div>
     </div>
