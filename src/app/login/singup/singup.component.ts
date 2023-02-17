@@ -95,7 +95,6 @@ export class SingupComponent {
           if (token){
             this.loginService.userId = token.customer.id;
             this.loginService.activeLogin();
-            this.globalService.google = true;
             this.routes.navigate(['/customer-account/app-user-profile'])
           }
           }

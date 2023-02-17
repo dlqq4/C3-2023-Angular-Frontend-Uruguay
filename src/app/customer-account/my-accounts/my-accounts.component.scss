@@ -12,68 +12,60 @@
     height: 130vh;
     background-color: rgba(0, 0, 0, 0.36); //DE ESTA MANERA LA OPACIDAD SOLO SE LE HACE A ESTE ELEMENTO Y NO A LO QUE ESTA DENTRO DE EL
     display: flex;
-    align-items: center;
-    justify-content: center;
+    //align-items: center;
+    //justify-content: center;
   
   }
 
-.container{
-    position: relative;
-    justify-content: center;
-    margin: auto;
-    margin-top: 40px;
-         
+//****************************************************************************
+
+.my {
+margin-top: 100px;
+margin-bottom: 100px;
+margin-left: 380px;
+padding: auto;
+
+
 }
 
-body{
-    margin-top:20px;
-    background:#FAFAFA;
-    position: absolute;
-    margin-top: 50%;
-
-}
-.order-card {
-    color: #fff;
+body {
+	background-color: #212127;
+	color: #fff;
+	font-family: sans-serif;
 }
 
-.bg-c-blue {
-    background: linear-gradient(45deg,#5eaefff2,#5eaefff2);
+.contenedor {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
-.bg-c-green {
-    background: linear-gradient(45deg,#fe6047,#fe6047);
+.moneda {
+	background-color: #4f8dcaf2;
+	padding: 20px;
+	margin: 20px;
+	border-radius: 0px;
+	width: 250px;
+	text-align: center;
 }
 
-.bg-c-yellow {
-    background: linear-gradient(45deg,#212127,#212127);
+.moneda img {
+	width: 50px;
 }
 
-.bg-c-pink {
-    background: linear-gradient(45deg,#212127,#212127);
+.moneda h2 {
+	margin-top: 0;
 }
 
-
-.card {
-    border-radius: 0px;
-    border: none;
-    margin-bottom: 30px;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 7px 13px 37px #000000;
+.cuenta-corriente {
+	background-color: #fe6047;
+	padding: 20px;
+	margin: 20px;
+	border-radius: 0px;
+	width: 250px;
+	text-align: center;
 }
 
-.card .card-block {
-    padding: 25px;
-}
-
-.order-card i {
-    font-size: 26px;
-}
-
-.f-left {
-    float: left;
-}
-
-.f-right {
-    float: right;
+.cuenta-corriente h2 {
+	margin-top: 0;
 }

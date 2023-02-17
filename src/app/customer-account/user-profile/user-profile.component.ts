@@ -25,7 +25,6 @@ export class UserProfileComponent implements OnInit{
 
   ngOnInit(): void {
     this.customerService.getCustomer()
-    if (this.globalService.google) this.globalService.withGoogle()
   }
 
   ngDoCheck(){

@@ -56,10 +56,11 @@ export class SinginComponent {
             complete: () => {
               let token: JWTCustomerModel | null = this.helper.decodeToken<JWTCustomerModel>(this.response);
               localStorage.setItem('Token', this.response);  //data es lo que devuelve mi signup
+             
               if (token){
                 this.loginService.userId = token.customer.id;
                 this.loginService.activeLogin();
-                this.routes.navigate(['/customer-account/app-user-profile'])
+                this.routes.navigate(['/customer-account/app-user-profile'])           
               }
               }
             });

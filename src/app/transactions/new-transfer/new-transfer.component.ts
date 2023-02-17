@@ -36,8 +36,7 @@ export class NewTransferComponent {
                     reason: this.transferForm.controls.reason.value,
                   }
                   this.transferService.newTransfer(transferencia).subscribe({ //NEXT ERROR COMPLETE CUANDO LA DATA LLEGA
-                    next:data => {
-                    console.log(data);
+                    next:data => {console.log(data);
                     this.route.navigate(['customer-account/app-my-accounts']);
                     },
                     complete: ()=> alert("¡Transferencia exitosa!")

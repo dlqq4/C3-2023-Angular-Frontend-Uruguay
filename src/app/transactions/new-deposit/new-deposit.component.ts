@@ -12,8 +12,6 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 export class NewDepositComponent {
 
 
-  //  deposit = {accoundId : '52351beb-9c7b-45d3-8bf9-e590c720cb09', amount : 8000 }
-
   constructor(public  depositsService: DepositsService,
               private formBuilder : FormBuilder){
 
@@ -30,18 +28,13 @@ export class NewDepositComponent {
           account: this.depositForm.controls.id.value,
           amount: + this.depositForm.controls.amount.value 
         }
-        this.depositsService.addDeposit(form).subscribe(data => {console.log(data)})
+        this.depositsService.addDeposit(form).subscribe({
+          next: data => {console.log(data)},
+          complete: ()=> alert("¡Depósito exitoso!")
+
+        })
     }
   }
-
-  /*
-  newDeposit(deposit : DepositModel){
-    this.depositsService.addDeposit(deposit).subscribe(
-      response =>{alert(deposit.accoundId+" Su deposito fue realizado con exito!")},
-      (error:HttpErrorResponse)=> {alert(error.message)}
-    );
-  }
-  */
 
 
 

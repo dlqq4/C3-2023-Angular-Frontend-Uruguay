@@ -16,7 +16,12 @@ export class LoginService {
 
   private apiServeUrl = environment.apiBaseUrl;
 
-  private statusControl : boolean = false;
+  /*
+  INVESTIGAR
+  ReplaySubject
+  */
+
+  private statusControl : boolean = false; 
   public statusEmiter : BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.statusControl)
 
   userIsLogged: boolean = false;
@@ -36,8 +41,8 @@ export class LoginService {
  
   activeLogin(){
     localStorage.setItem('MyToken', 'true')
-    this.statusControl = !this.statusControl;
-    this.statusEmiter.next(this.statusControl);
+    this.statusControl = !this.statusControl; // ACA GENERO EL CAMBIO EN LA VARIABLE OBSERVABLE
+    this.statusEmiter.next(this.statusControl); // A LA ESPERA DE UN PROXIMO CAMBIO DE INFORMACION
   }
  
   logOut(){
