@@ -1,0 +1,78 @@
+
+
+  body{
+    margin-top:20px;
+    background:#eee;
+    border-radius: 0px;
+    
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 260px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 1400px;
+    color: #fe6047;
+   
+}
+
+.card-columns .card {
+    margin-bottom: 0.75rem;
+    border-radius: 0px;
+    
+    
+}
+
+.text-muted {
+    color: #6c7c9c !important;
+    
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    
+    
+}
+.mb-3 {
+    margin-bottom: 1rem ; // !important
+    
+}
+
+.input-group {
+    //position: relative;
+    display: flex;
+    width: 100%;
+    color: #fe6047;
+    
+}
+
+
+//*********************BOTON***********************
+
+.text-right{
+    
+    display: flex;
+    justify-content: right;
+    
+}
+
+.boton {
+    width: 25%;
+    background: #fe6047;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 18px 0;
+    font-size: 16px;
+    
+    margin-left: 0px;
+    margin-top: 0px;
+    
+  }
+  
+  .boton:hover{
+    background-color: #5eaefff2;
+  }
+
